@@ -1,23 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-serif: "Cormorant Garamond", serif;
   
-  /* Ocean Blue Palette */
-  --color-bg-main: #E6F0F5; /* Very light blue background */
-  --color-card-light: #FCFAF8;
-  --color-card-dark: #1E1F24;
-  --color-accent-blue: #3A7BD5;
-  --color-accent-deep-blue: #003366;
-  --color-accent-yellow: #FFD54F;
-  --color-accent-orange: #FF8A65;
-  --color-accent-sage: #A3B18A; /* Morandi Sage Green */
-  --color-accent-highlight: #A3B18A; /* Morandi Sage Green highlight for name */
-  --color-section-lively: #F4F7F6; /* Muted teal-grey for sections */
-  --color-text-primary: #2C3E50;
-  --color-text-secondary: #7F8C8D;
+  /* Warm Organic Palette */
+  --color-bg-main: #FDFCF8; /* Warm cream */
+  --color-card-light: #FFFFFF;
+  --color-card-dark: #2A332C; /* Deep forest green */
+  --color-accent-olive: #5A6B5D; /* Muted olive green */
+  --color-accent-sage: #8A9A8E; /* Light sage green */
+  --color-accent-gold: #D4AF37; /* Subtle gold accent */
+  --color-accent-terracotta: #A65D43; /* Warm earth tone */
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #4A5D4E;
 }
 
 @keyframes gradient-flow {
@@ -27,9 +24,7 @@
 }
 
 body {
-  background: linear-gradient(-45deg, #B2C9D8, #E8F0F2, #C5D5CB, #D7E3E4);
-  background-size: 400% 400%;
-  animation: gradient-flow 15s ease infinite;
+  background-color: var(--color-bg-main);
   color: var(--color-text-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;

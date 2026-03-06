@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import portrait from './assets/portrait.jpg';
 import { 
   ArrowRight, 
   Download, 
@@ -81,7 +80,7 @@ const translations = {
       title: ["Beyond", "the Screen"],
       quote: "I believe the best products are built by people who deeply observe life.",
       items: [
-        { title: "Capturing stories", desc: "through my camera lens on the road, observing human interaction." },
+        { title: "Nature & Serenity", desc: "Finding inspiration in the interplay of light and water, often found wandering through parks with a camera." },
         { title: "Smashing shuttlecocks", desc: "on the badminton court—a great way to reset my brain and maintain energy." },
         { title: "Experimenting in the kitchen", desc: "where cooking is just another form of product development—mixing for the perfect UX." }
       ]
@@ -187,24 +186,24 @@ const Navbar = ({ lang, setLang }: any) => {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <motion.div 
           whileHover={{ scale: 1.05 }}
-          className="text-accent-deep-blue font-serif text-xl font-bold cursor-pointer"
+          className="text-text-primary font-serif text-xl font-bold cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           {translations[lang].hero.name}
         </motion.div>
         
         <div className="flex items-center gap-8">
-          <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-accent-deep-blue/70">
-            <a href="#work" className="hover:text-accent-deep-blue transition-colors">{t.work}</a>
-            <a href="#about" className="hover:text-accent-deep-blue transition-colors">{t.about}</a>
-            <a href="#footer" className="hover:text-accent-deep-blue transition-colors">{t.contact}</a>
+          <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-text-secondary">
+            <a href="#work" className="hover:text-accent-olive transition-colors">{t.work}</a>
+            <a href="#about" className="hover:text-accent-olive transition-colors">{t.about}</a>
+            <a href="#footer" className="hover:text-accent-olive transition-colors">{t.contact}</a>
           </div>
           
-          <div className="h-4 w-[1px] bg-accent-deep-blue/10 hidden md:block"></div>
+          <div className="h-4 w-[1px] bg-text-secondary/10 hidden md:block"></div>
           
           <button
             onClick={() => setLang(lang === 'en' ? 'cn' : 'en')}
-            className="flex items-center gap-2 text-accent-deep-blue font-bold text-xs uppercase tracking-tighter hover:opacity-70 transition-opacity"
+            className="flex items-center gap-2 text-text-primary font-bold text-xs uppercase tracking-tighter hover:opacity-70 transition-opacity"
           >
             <Languages size={16} />
             {lang === 'en' ? 'CN' : 'EN'}
@@ -247,11 +246,11 @@ const Hero = ({ lang }: any) => {
       {/* Parallax Decorative Elements */}
       <motion.div 
         style={{ y: y1, opacity }}
-        className="absolute top-1/4 -left-20 w-64 h-64 bg-accent-blue/5 rounded-full blur-3xl -z-10"
+        className="absolute top-1/4 -left-20 w-64 h-64 bg-accent-sage/10 rounded-full blur-3xl -z-10"
       />
       <motion.div 
         style={{ y: y2, opacity }}
-        className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent-highlight/5 rounded-full blur-3xl -z-10"
+        className="absolute bottom-1/4 -right-20 w-96 h-96 bg-accent-olive/10 rounded-full blur-3xl -z-10"
       />
 
       <motion.div
@@ -266,21 +265,16 @@ const Hero = ({ lang }: any) => {
           className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl relative z-10"
         >
           <img 
-            key={Date.now()}
-            src={portrait} 
+            src="https://raw.githubusercontent.com/wy1xiaoixao/my-image/d0f58f980449afcaeafa39ff0ad269ab8e1d4a1b/20260306-163018.jpg" 
             alt="Xiao Xiao Portrait" 
             className="w-full h-full object-cover"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1000";
-            }}
             referrerPolicy="no-referrer"
           />
         </motion.div>
         <motion.div 
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute -inset-6 border-2 border-dashed border-accent-blue/20 rounded-full"
+          className="absolute -inset-6 border-2 border-dashed border-accent-sage/30 rounded-full"
         ></motion.div>
       </motion.div>
 
@@ -292,13 +286,13 @@ const Hero = ({ lang }: any) => {
       >
         <motion.h1 
           variants={itemVariants}
-          className="font-serif text-6xl md:text-8xl lg:text-9xl leading-tight tracking-tight text-accent-deep-blue mb-6"
+          className="font-serif text-6xl md:text-8xl lg:text-9xl leading-tight tracking-tight text-text-primary mb-6"
         >
-          {t.hi} <span className="text-accent-highlight inline-block">{t.name}</span>
+          {t.hi} <span className="text-accent-olive italic inline-block">{t.name}</span>
         </motion.h1>
         <motion.p 
           variants={itemVariants}
-          className="text-lg md:text-2xl text-accent-deep-blue font-medium max-w-3xl mx-auto mb-10 opacity-80"
+          className="text-lg md:text-2xl text-text-secondary font-light max-w-3xl mx-auto mb-10 italic font-serif"
         >
           {t.subtitle}
         </motion.p>
@@ -307,7 +301,7 @@ const Hero = ({ lang }: any) => {
             whileHover={{ scale: 1.05, boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)" }}
             whileTap={{ scale: 0.95 }}
             href="#work" 
-            className="inline-flex items-center justify-center gap-2 bg-accent-deep-blue text-white px-10 py-4 rounded-lg font-bold hover:bg-opacity-90 transition-all shadow-xl"
+            className="inline-flex items-center justify-center gap-2 bg-accent-olive text-white px-10 py-4 rounded-lg font-bold hover:bg-opacity-90 transition-all shadow-xl"
           >
             {t.aboutMe}
           </motion.a>
@@ -348,13 +342,13 @@ const BentoBox = ({ lang }: any) => {
         <motion.div 
           variants={item}
           whileHover={{ scale: 1.01 }}
-          className="md:col-span-2 bg-accent-deep-blue text-white rounded-[40px] p-10 shadow-sm flex flex-col justify-center items-start text-left relative overflow-hidden group"
+          className="md:col-span-2 bg-accent-olive text-white rounded-[40px] p-10 shadow-sm flex flex-col justify-center items-start text-left relative overflow-hidden group"
         >
           <div className="relative z-10">
             <p className="text-white/60 text-sm uppercase tracking-widest mb-4 font-bold">{t.backgroundLabel}</p>
             <div className="text-4xl md:text-5xl font-serif font-medium leading-tight">
-              {t.backgroundTitle[0]} <span className="text-accent-yellow italic">{t.backgroundTitle[1]}</span>, <br/> 
-              <span className="text-accent-orange italic">{t.backgroundTitle[2]}</span> & <span className="text-accent-sage italic">{t.backgroundTitle[3]}</span>
+              {t.backgroundTitle[0]} <span className="text-accent-gold italic">{t.backgroundTitle[1]}</span>, <br/> 
+              <span className="text-accent-terracotta italic">{t.backgroundTitle[2]}</span> & <span className="text-accent-sage italic">{t.backgroundTitle[3]}</span>
             </div>
           </div>
           <motion.div 
@@ -373,7 +367,7 @@ const BentoBox = ({ lang }: any) => {
         <motion.div 
           variants={item}
           whileHover={{ scale: 1.03, rotate: -1 }}
-          className="bg-accent-yellow rounded-[40px] p-10 shadow-sm flex flex-col justify-center text-text-primary"
+          className="bg-accent-gold rounded-[40px] p-10 shadow-sm flex flex-col justify-center text-text-primary"
         >
           <Lightbulb size={32} className="mb-4" />
           <p className="text-xl font-serif italic leading-relaxed">
@@ -391,7 +385,7 @@ const BentoBox = ({ lang }: any) => {
             {['Figma', 'SQL', 'React', 'Python', 'X-mind', 'CapCut', 'Tableau', 'Notion'].map((tech, i) => (
               <motion.span 
                 key={tech} 
-                whileHover={{ y: -5, backgroundColor: 'var(--color-accent-blue)', color: 'white', scale: 1.1 }}
+                whileHover={{ y: -5, backgroundColor: 'var(--color-accent-sage)', color: 'white', scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-bg-main rounded-full text-text-primary font-bold border border-black/5 transition-all cursor-default"
               >
@@ -422,7 +416,7 @@ const WorkCard = ({ project, lang, index }: any) => {
     >
       <div className="relative z-10">
         <div className="flex items-center gap-4 mb-6">
-          <span className="px-4 py-1 bg-accent-blue/10 text-accent-blue rounded-full text-xs font-bold uppercase tracking-widest">
+          <span className="px-4 py-1 bg-accent-sage/10 text-accent-olive rounded-full text-xs font-bold uppercase tracking-widest">
             {project.tag.split(' | ')[0]}
           </span>
           <span className="text-text-secondary text-sm font-medium">{project.company}</span>
@@ -433,7 +427,7 @@ const WorkCard = ({ project, lang, index }: any) => {
               whileHover={{ rotate: 15, scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <project.icon className="text-accent-blue" size={40} />
+              <project.icon className="text-accent-olive" size={40} />
             </motion.div>
           )}
           {project.role}
@@ -453,10 +447,10 @@ const WorkCard = ({ project, lang, index }: any) => {
                   initial={{ scale: 0.9, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="bg-accent-orange/10 p-4 rounded-2xl border border-accent-orange/20 inline-block"
+                  className="bg-accent-terracotta/10 p-4 rounded-2xl border border-accent-terracotta/20 inline-block"
                 >
-                  <div className="text-3xl font-bold text-accent-orange">{project.stat}</div>
-                  <div className="text-xs text-accent-orange font-bold uppercase tracking-wider">{t.conversion}</div>
+                  <div className="text-3xl font-bold text-accent-terracotta">{project.stat}</div>
+                  <div className="text-xs text-accent-terracotta font-bold uppercase tracking-wider">{t.conversion}</div>
                 </motion.div>
               )}
             </div>
@@ -464,7 +458,7 @@ const WorkCard = ({ project, lang, index }: any) => {
         </div>
       </div>
       {/* Decorative background element for hover */}
-      <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-accent-blue/5 rounded-full blur-3xl group-hover:bg-accent-blue/10 transition-colors duration-500 -z-0" />
+      <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-accent-sage/5 rounded-full blur-3xl group-hover:bg-accent-sage/10 transition-colors duration-500 -z-0" />
     </motion.div>
   );
 };
@@ -526,7 +520,7 @@ const ManualOfMe = ({ lang }: any) => {
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-5xl md:text-8xl font-serif mb-10 text-accent-deep-blue leading-tight">{t.title[0]} <br/> {t.title[1]}</h2>
+          <h2 className="text-5xl md:text-8xl font-serif mb-10 text-text-primary leading-tight">{t.title[0]} <br/> {t.title[1]}</h2>
           <p className="text-2xl text-text-secondary leading-relaxed font-serif italic max-w-lg">
             "{t.quote}"
           </p>
@@ -550,12 +544,12 @@ const ManualOfMe = ({ lang }: any) => {
               >
                 <motion.div 
                   whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
-                  className="w-16 h-16 rounded-3xl bg-white flex items-center justify-center shrink-0 text-accent-blue shadow-sm border border-accent-blue/10 group-hover:bg-accent-blue group-hover:text-white transition-all duration-500"
+                  className="w-16 h-16 rounded-3xl bg-white flex items-center justify-center shrink-0 text-accent-sage shadow-sm border border-accent-sage/10 group-hover:bg-accent-sage group-hover:text-white transition-all duration-500"
                 >
                   <Icon size={32} />
                 </motion.div>
                 <div>
-                  <h3 className="text-2xl font-medium mb-3 text-accent-deep-blue">{item.title}</h3>
+                  <h3 className="text-2xl font-medium mb-3 text-text-primary">{item.title}</h3>
                   <p className="text-text-secondary text-lg leading-relaxed">{item.desc}</p>
                 </div>
               </motion.div>
@@ -584,15 +578,24 @@ const Footer = ({ lang }: any) => {
           </p>
         </motion.div>
         
-        <div className="flex gap-8 mb-24">
-          {[Linkedin, Mail, Github].map((Icon, i) => (
+        <div className="flex flex-wrap justify-center gap-8 mb-24">
+          {[
+            { Icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+            { Icon: Mail, href: "mailto:18279784787@163.com", label: "18279784787@163.com" },
+            { Icon: Github, href: "https://github.com/wy1xiaoixao", label: "GitHub" }
+          ].map(({ Icon, href, label }, i) => (
             <motion.a 
               key={i}
-              whileHover={{ scale: 1.1, y: -5 }}
-              href="#" 
-              className="w-16 h-16 rounded-[24px] bg-white shadow-sm flex items-center justify-center text-text-primary hover:bg-text-primary hover:text-white transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -5 }}
+              href={href}
+              target={href.startsWith('http') ? "_blank" : undefined}
+              rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
+              className="group relative flex items-center gap-3 px-6 h-16 rounded-[24px] bg-white shadow-sm text-text-primary hover:bg-text-primary hover:text-white transition-all duration-500 overflow-hidden"
             >
-              <Icon size={28} />
+              <Icon size={24} className="flex-shrink-0" />
+              <span className="max-w-0 overflow-hidden group-hover:max-w-[300px] transition-all duration-500 ease-in-out whitespace-nowrap font-bold text-sm tracking-tight">
+                {label}
+              </span>
             </motion.a>
           ))}
         </div>
@@ -612,7 +615,7 @@ export default function App() {
   const [lang, setLang] = useState<Language>('en');
 
   return (
-    <div className="bg-bg-main min-h-screen selection:bg-accent-yellow selection:text-text-primary">
+    <div className="bg-bg-main min-h-screen selection:bg-accent-gold selection:text-text-primary">
       <Navbar lang={lang} setLang={setLang} />
       <Hero lang={lang} />
       <div id="about">
