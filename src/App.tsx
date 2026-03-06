@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
+import portrait from './assets/portrait.jpg';
 import { 
   ArrowRight, 
   Download, 
@@ -265,9 +266,14 @@ const Hero = ({ lang }: any) => {
           className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-2xl relative z-10"
         >
           <img 
-            src="/portrait.jpg" 
+            key={Date.now()}
+            src={portrait} 
             alt="Xiao Xiao Portrait" 
             className="w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1000";
+            }}
             referrerPolicy="no-referrer"
           />
         </motion.div>
