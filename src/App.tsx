@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import portrait from '../img_v3_02vh_4e36fd9e-3f3f-47af-bcea-863cf3fa902g.jpg';
+import portrait from './assets/portrait.jpg';
 import { 
   ArrowRight, 
   Download, 
