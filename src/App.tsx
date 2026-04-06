@@ -23,7 +23,8 @@ import {
   Search,
   Database,
   Layout,
-  Languages
+  Languages,
+  Leaf
 } from 'lucide-react';
 
 type Language = 'en' | 'cn';
@@ -33,61 +34,75 @@ const translations = {
     hero: {
       hi: "Hi, I'm",
       name: "Xiao Xiao",
-      subtitle: "A multidisciplinary Product Builder & Operator with a background in Business, Law, and Linguistics.",
-      aboutMe: "About Me"
+      subtitle: "A multidisciplinary Product Builder & Growth Operator bridging Translation, Product, and AI Growth.",
+      aboutMe: "View Work"
     },
     bento: {
-      backgroundLabel: "Multidisciplinary Background",
-      backgroundTitle: ["Bridging", "Business", "Law", "Linguistics"],
-      quote: "I bridge the gap between complex data and intuitive AI-driven experiences.",
+      backgroundLabel: "Education & Background",
+      backgroundTitle: ["Bridging", "Translation", "Product", "AI Growth"],
+      education: [
+        { school: "Zhongnan Univ. of Econ. & Law", degree: "Master in English Translation", date: "2024.09 - 2026.06", gpa: "GPA: 3.8 (Top 10%)" },
+        { school: "Jiangxi Normal University", degree: "Bachelor in Business English", date: "2020.09 - 2024.06", gpa: "GPA: 3.9 (Top 3%)" }
+      ],
+      quote: "I bridge the gap between linguistic nuance and intuitive AI-driven product growth.",
       toolkitLabel: "My Toolkit"
     },
     work: {
       title: "Featured Work",
       subtitle: "Selected projects showcasing product thinking, data-driven growth, and AI operations.",
-      projectsCount: "03 PROJECTS",
+      projectsCount: "04 PROJECTS",
       labels: {
         challenge: "The Challenge",
         impact: "The Impact",
-        conversion: "Conversion Boost"
+        conversion: "Key Result"
       },
       projects: [
         {
           role: "Product Manager Intern",
           company: "TAL (学而思)",
-          tag: "CRM System 2.0 | Automated Workflows | SQL",
-          challenge: "Transforming the CRM system to boost lead conversion during the Double 11 campaign.",
-          impact: "Achieved a 15% increase in high-intent customer store visits and boosted overall order conversion to 12%."
+          tag: "Growth Strategy | CRM Optimization | SQL",
+          challenge: "Designing group buying growth strategies and optimizing CRM systems for offline-to-online retail scenarios.",
+          impact: "Achieved a 60% group order penetration rate and a 12% increase in offline store GMV through tiered subsidy mechanisms and automated lead flows.",
+          stat: "+12% GMV"
         },
         {
-          role: "Product Operations (AI Agent)",
+          role: "AI Product Growth Intern",
           company: "PatSnap (智慧芽)",
-          tag: "AI Agent | A/B Testing | User Growth",
-          challenge: "Optimizing the onboarding and conversion funnel for an AI Agent product.",
-          impact: "Lifted landing page conversion rate by 15% and increased average dwell time by over 15 seconds.",
-          stat: "+15%"
+          tag: "AI Agent | SEO Growth | A/B Testing",
+          challenge: "Optimizing user growth funnels for AI products during the cold start phase.",
+          impact: "Boosted landing page conversion by 15% and recovered natural traffic by 6% through SEO content restructuring and progressive form design.",
+          stat: "+15% CVR"
         },
         {
-          role: "AI Feature Product Design",
-          company: "Scanner App (Independent)",
-          tag: "OCR + LLM | UX Prototyping (Figma)",
-          challenge: "Unifying scattered AI entry points to create a seamless document processing experience.",
-          impact: "Designed an AI-powered homepage module that integrates OCR and LLM capabilities for complex document processing."
+          role: "AI Assistant Design",
+          company: "Scanner App (Project)",
+          tag: "OCR + LLM | UX Design | Monetization",
+          challenge: "Reconstructing the document processing workflow by integrating an AI assistant to reduce user friction.",
+          impact: "Designed an AI-powered 'Lightweight Understanding' module and monetization hooks like one-click mind map exports, driving core product value.",
+          stat: "AI-First"
+        },
+        {
+          role: "Independent Creator",
+          company: "Spring Brings All Things to Life",
+          tag: "UI/UX | Independent Dev | Emotional Value",
+          challenge: "Traditional productivity tools often feel cold and pressuring; creating a more immersive, healing experience.",
+          impact: "Integrated task completion with virtual plant growth, creating a 'Task → Growth → Feedback' loop. Gained 10+ active users organically.",
+          stat: "10+ Users"
         }
       ]
     },
     manual: {
       title: ["Beyond", "the Screen"],
-      quote: "I believe the best products are built by people who deeply observe life.",
+      quote: "I believe the best products are built by people who deeply observe life and communicate across disciplines.",
       items: [
-        { title: "Nature & Serenity", desc: "Finding inspiration in the interplay of light and water, often found wandering through parks with a camera." },
-        { title: "Smashing shuttlecocks", desc: "on the badminton court—a great way to reset my brain and maintain energy." },
-        { title: "Experimenting in the kitchen", desc: "where cooking is just another form of product development—mixing for the perfect UX." }
+        { title: "Visual Storytelling", desc: "Capturing the interplay of light and shadow through my lens—observing the subtle interactions between people and society." },
+        { title: "Energy Reset", desc: "On the badminton court—a high-intensity way to reset my brain and maintain peak focus." },
+        { title: "Culinary Curator", desc: "Viewing cooking as sensory product design—meticulously balancing ingredients and timing to deliver a delightful 'user' experience." }
       ]
     },
     footer: {
       title: ["Let's build something", "great together."],
-      subtitle: "Currently open for new opportunities in Product Management and Growth Operations.",
+      subtitle: "",
       copyright: "Designed with intent."
     },
     nav: {
@@ -100,61 +115,75 @@ const translations = {
     hero: {
       hi: "你好，我是",
       name: "小小",
-      subtitle: "跨学科背景的产品构建者，致力于通过商业洞察、法律逻辑与语言学思维驱动产品创新。",
+      subtitle: "跨学科背景的产品构建者与增长运营，致力于通过翻译思维、产品逻辑与 AI 场景落地驱动产品创新。",
       aboutMe: "查看作品"
     },
     bento: {
-      backgroundLabel: "多学科背景",
-      backgroundTitle: ["融合", "商业洞察", "法律逻辑", "语言学思维"],
-      quote: "我致力于在复杂的数据逻辑与直觉化的 AI 交互体验之间搭建桥梁。",
+      backgroundLabel: "教育与多学科背景",
+      backgroundTitle: ["融合", "翻译思维", "产品逻辑", "AI 增长"],
+      education: [
+        { school: "中南财经政法大学 (211)", degree: "英语笔译硕士", date: "2024.09 - 2026.06", gpa: "GPA: 3.8 (专业 Top 10%)" },
+        { school: "江西师范大学", degree: "商务英语本科", date: "2020.09 - 2024.06", gpa: "GPA: 3.9 (专业 Top 3%)" }
+      ],
+      quote: "我致力于在语言的微妙差异与直觉化的 AI 增长策略之间搭建桥梁。",
       toolkitLabel: "专业技能"
     },
     work: {
       title: "精选作品",
       subtitle: "精选项目案例，涵盖产品策略、数据驱动增长及 AI 场景落地。",
-      projectsCount: "03 个项目",
+      projectsCount: "04 个项目",
       labels: {
         challenge: "核心挑战",
         impact: "项目产出",
-        conversion: "增长指标"
+        conversion: "核心结果"
       },
       projects: [
         {
           role: "产品经理 (实习)",
           company: "好未来 (学而思)",
-          tag: "CRM 系统 2.0 | 自动化工作流 | SQL",
-          challenge: "双11大促期间主导 CRM 系统迭代，优化销售线索转化链路。",
-          impact: "高意向客户到店率提升 15%，整体订单转化率提升至 12%。"
+          tag: "增长策略 | CRM 优化 | SQL",
+          challenge: "围绕门店即时零售场景，设计拼团增长策略并推动 CRM 体系协同优化。",
+          impact: "通过阶梯补贴机制与自动化线索流转，实现订单渗透率达 60%，带动线下门店 GMV 增长 12%。",
+          stat: "+12% GMV"
         },
         {
-          role: "产品运营 (AI 智能体)",
+          role: "AI 产品增长 (实习)",
           company: "智慧芽 (PatSnap)",
-          tag: "AI Agent | A/B 测试 | 用户增长",
-          challenge: "负责 AI Agent 产品的用户旅程优化，提升入职转化与留存漏斗。",
-          impact: "落地页转化率提升 15%，平均停留时间增加超过 15 秒。",
-          stat: "+15%"
+          tag: "AI Agent | SEO 增长 | A/B 测试",
+          challenge: "负责 AI 产品冷启动阶段的用户增长链路优化，提升核心转化指标。",
+          impact: "通过 SEO 内容重构与渐进式表单设计，落地页转化率提升 15%，自然流量回升 6%。",
+          stat: "+15% 转化"
         },
         {
-          role: "AI 创新产品设计",
-          company: "扫描全能王 (个人项目)",
-          tag: "OCR + LLM | UX 原型设计 (Figma)",
-          challenge: "整合分散的 AI 功能入口，构建一站式智能文档处理体验。",
-          impact: "设计了 AI 驱动的智能模块，深度集成 OCR 与 LLM 能力，实现复杂文档的高效处理。"
+          role: "AI 智能助手设计",
+          company: "文档扫描类 APP (项目)",
+          tag: "OCR + LLM | UX 设计 | 商业化",
+          challenge: "主导 AI 助手搭建，重构“识别到导出”的全链路文档处理体验。",
+          impact: "确立“轻量化理解”产品定位，打造思维导图一键导出等高价值功能，作为核心付费触点驱动增收。",
+          stat: "AI 驱动"
+        },
+        {
+          role: "独立设计与开发",
+          company: "「春生万物」待办记录工具",
+          tag: "UI/UX | 独立开发 | 情绪价值",
+          challenge: "针对传统效率工具重压迫感的痛点，探索治愈系、沉浸式的待办体验。",
+          impact: "将任务完成度与虚拟植物成长绑定，构建“任务→成长→可视化反馈”激励闭环，累计获得 10+ 用户好评。",
+          stat: "10+ 用户"
         }
       ]
     },
     manual: {
       title: ["生活", "切片"],
-      quote: "我相信，卓越的产品洞察源于对生活细致入微的观察与热爱。",
+      quote: "我相信，卓越的产品洞察源于对生活细致入微的观察与跨学科的沟通热爱。",
       items: [
-        { title: "故事捕捉", desc: "通过镜头记录旅途，在光影间观察人与社会的微妙互动。" },
+        { title: "光影捕捉", desc: "通过镜头记录旅途，在光影间观察人与社会的微妙互动。" },
         { title: "能量重启", desc: "在羽毛球场上挥洒汗水——这是我保持精力与专注的独特方式。" },
-        { title: "厨房实验室", desc: "烹饪是另一种形式的产品开发——在调味与火候间追求极致体验。" }
+        { title: "厨房主理人", desc: "将烹饪视为一场感官驱动的产品设计——在食材的排列组合与火候的精准掌控中，构建极致的味蕾体验。" }
       ]
     },
     footer: {
-      title: ["期待与您", "共同构建未来。"],
-      subtitle: "目前正在寻求产品经理或产品增长相关的职业机会。",
+      title: ["期待与你，", "创造更多精彩。"],
+      subtitle: "",
       copyright: "用心设计，追求卓越。"
     },
     nav: {
@@ -242,7 +271,7 @@ const Hero = ({ lang }: any) => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 pt-20 pb-12 max-w-7xl mx-auto relative overflow-hidden">
+    <section className="min-h-[75vh] flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 pt-12 pb-4 max-w-7xl mx-auto relative overflow-hidden">
       {/* Parallax Decorative Elements */}
       <motion.div 
         style={{ y: y1, opacity }}
@@ -330,7 +359,7 @@ const BentoBox = ({ lang }: any) => {
   };
 
   return (
-    <section className="px-6 md:px-12 lg:px-24 py-24 max-w-7xl mx-auto">
+    <section className="px-6 md:px-12 lg:px-24 py-12 max-w-7xl mx-auto">
       <motion.div 
         variants={container}
         initial="hidden"
@@ -338,17 +367,30 @@ const BentoBox = ({ lang }: any) => {
         viewport={{ once: true, margin: "-100px" }}
         className="grid grid-cols-1 md:grid-cols-3 gap-6 md:auto-rows-[280px]"
       >
-        {/* Box 1: Background */}
+        {/* Box 1: Background & Education */}
         <motion.div 
           variants={item}
           whileHover={{ scale: 1.01 }}
-          className="md:col-span-2 bg-accent-olive text-white rounded-[40px] p-10 shadow-sm flex flex-col justify-center items-start text-left relative overflow-hidden group"
+          className="md:col-span-2 bg-accent-olive text-white rounded-[40px] p-10 shadow-sm flex flex-col justify-between items-start text-left relative overflow-hidden group"
         >
-          <div className="relative z-10">
+          <div className="relative z-10 w-full">
             <p className="text-white/60 text-sm uppercase tracking-widest mb-4 font-bold">{t.backgroundLabel}</p>
-            <div className="text-4xl md:text-5xl font-serif font-medium leading-tight">
+            <div className="text-3xl md:text-4xl font-serif font-medium leading-tight mb-8">
               {t.backgroundTitle[0]} <span className="text-accent-gold italic">{t.backgroundTitle[1]}</span>, <br/> 
-              <span className="text-accent-terracotta italic">{t.backgroundTitle[2]}</span> & <span className="text-accent-sage italic">{t.backgroundTitle[3]}</span>
+              <span className="text-accent-sage italic">{t.backgroundTitle[2]}</span> & <span className="text-accent-sage italic">{t.backgroundTitle[3]}</span>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-white/10 pt-6">
+              {t.education.map((edu: any, i: number) => (
+                <div key={i} className="flex flex-col">
+                  <span className="text-[10px] uppercase tracking-tighter text-white/50 mb-1">{edu.date}</span>
+                  <span className="font-bold text-sm leading-tight mb-1">{edu.school}</span>
+                  <div className="flex flex-col text-[11px] text-white/70 italic leading-tight">
+                    <span>{edu.degree}</span>
+                    <span className="text-accent-gold/80 not-italic font-medium mt-1">{edu.gpa}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           <motion.div 
@@ -382,7 +424,7 @@ const BentoBox = ({ lang }: any) => {
         >
           <div className="text-sm text-text-secondary uppercase tracking-widest font-bold mb-8">{t.toolkitLabel}</div>
           <div className="flex flex-wrap gap-4 items-center">
-            {['Figma', 'SQL', 'React', 'Python', 'X-mind', 'CapCut', 'Tableau', 'Notion'].map((tech, i) => (
+            {['SQL', 'Excel', 'Axure', 'Modao', 'Figma', 'Xmind', 'LLM', 'Prompt', 'TEM-8', 'CATTI-2', 'Junior Accountant'].map((tech, i) => (
               <motion.span 
                 key={tech} 
                 whileHover={{ y: -5, backgroundColor: 'var(--color-accent-sage)', color: 'white', scale: 1.1 }}
@@ -408,68 +450,72 @@ const WorkCard = ({ project, lang, index }: any) => {
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: index * 0.1 }}
       whileHover={{ 
-        scale: 1.02, 
+        scale: 1.01, 
         y: -5,
-        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
+        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)"
       }}
-      className="group relative bg-card-light rounded-[50px] p-8 md:p-16 shadow-sm border border-black/5 overflow-hidden transition-all duration-500"
+      className="group relative bg-card-light rounded-[40px] p-8 md:p-12 shadow-sm border border-black/5 overflow-hidden transition-all duration-500"
     >
       <div className="relative z-10">
-        <div className="flex items-center gap-4 mb-6">
-          <span className="px-4 py-1 bg-accent-sage/10 text-accent-olive rounded-full text-xs font-bold uppercase tracking-widest">
+        <div className="flex flex-wrap items-center gap-4 mb-8">
+          <span className="px-4 py-1 bg-accent-sage/20 text-accent-olive rounded-full text-[10px] font-bold uppercase tracking-widest">
             {project.tag.split(' | ')[0]}
           </span>
-          <span className="text-text-secondary text-sm font-medium">{project.company}</span>
+          <span className="text-text-secondary text-xs font-bold uppercase tracking-widest opacity-60">{project.company}</span>
         </div>
-        <h3 className="text-3xl md:text-5xl font-serif font-medium mb-8 text-text-primary leading-tight flex items-center gap-4">
+        
+        <h3 className="text-2xl md:text-4xl font-serif font-medium mb-10 text-text-primary leading-tight flex items-center gap-4">
           {project.icon && (
             <motion.div
               whileHover={{ rotate: 15, scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
+              className="shrink-0"
             >
-              <project.icon className="text-accent-olive" size={40} />
+              <project.icon className="text-accent-olive" size={32} />
             </motion.div>
           )}
           {project.role}
         </h3>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-text-secondary mb-4">{t.challenge}</h4>
-            <p className="text-text-primary/80 leading-relaxed">{project.challenge}</p>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
+          <div className="md:col-span-4">
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-text-secondary mb-4 opacity-50">{t.challenge}</h4>
+            <p className="text-text-primary/80 leading-relaxed text-sm md:text-base">{project.challenge}</p>
           </div>
-          <div>
-            <h4 className="text-xs font-bold uppercase tracking-widest text-text-secondary mb-4">{t.impact}</h4>
-            <div className="flex flex-col gap-4">
-              <p className="text-lg font-medium text-text-primary leading-relaxed">{project.impact}</p>
-              {project.stat && (
-                <motion.div 
-                  initial={{ scale: 0.9, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="bg-accent-terracotta/10 p-4 rounded-2xl border border-accent-terracotta/20 inline-block"
-                >
-                  <div className="text-3xl font-bold text-accent-terracotta">{project.stat}</div>
-                  <div className="text-xs text-accent-terracotta font-bold uppercase tracking-wider">{t.conversion}</div>
-                </motion.div>
-              )}
-            </div>
+          
+          <div className="md:col-span-5">
+            <h4 className="text-[10px] font-bold uppercase tracking-widest text-text-secondary mb-4 opacity-50">{t.impact}</h4>
+            <p className="text-base md:text-lg font-medium text-text-primary leading-relaxed">{project.impact}</p>
+          </div>
+          
+          <div className="md:col-span-3 flex md:justify-end items-start">
+            {project.stat && (
+              <motion.div 
+                initial={{ scale: 0.9, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.3 }}
+                className="bg-accent-sage/10 p-6 rounded-3xl border border-accent-sage/20 w-full text-center md:text-left"
+              >
+                <div className="text-3xl font-bold text-accent-olive mb-1 tracking-tight">{project.stat}</div>
+                <div className="text-[10px] text-accent-olive font-bold uppercase tracking-widest opacity-60">{t.conversion}</div>
+              </motion.div>
+            )}
           </div>
         </div>
       </div>
       {/* Decorative background element for hover */}
-      <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-accent-sage/5 rounded-full blur-3xl group-hover:bg-accent-sage/10 transition-colors duration-500 -z-0" />
+      <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-accent-olive/5 rounded-full blur-3xl group-hover:bg-accent-olive/10 transition-colors duration-500 -z-0" />
     </motion.div>
   );
 };
 
 const FeaturedWork = ({ lang }: any) => {
   const t = translations[lang].work;
-  const icons = [Database, Rocket, Layout];
+  const icons = [Database, Rocket, Layout, Leaf];
   const projects = t.projects.map((p, i) => ({ ...p, icon: icons[i] }));
 
   return (
-    <section id="work" className="px-6 md:px-12 lg:px-24 py-32 max-w-7xl mx-auto">
+    <section id="work" className="px-6 md:px-12 lg:px-24 py-12 max-w-7xl mx-auto">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -511,7 +557,7 @@ const ManualOfMe = ({ lang }: any) => {
   };
 
   return (
-    <section className="bg-section-lively py-40 px-6 md:px-12 lg:px-24 relative overflow-hidden">
+    <section className="bg-section-lively py-12 px-6 md:px-12 lg:px-24 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-accent-blue/5 to-transparent"></div>
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative z-10">
         <motion.div
@@ -564,7 +610,7 @@ const ManualOfMe = ({ lang }: any) => {
 const Footer = ({ lang }: any) => {
   const t = translations[lang].footer;
   return (
-    <footer className="bg-bg-main py-32 px-6 md:px-12 lg:px-24">
+    <footer className="bg-bg-main py-12 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -573,9 +619,11 @@ const Footer = ({ lang }: any) => {
           className="mb-16"
         >
           <h2 className="text-5xl md:text-7xl font-serif mb-8 text-text-primary">{t.title[0]} <br/> {t.title[1]}</h2>
-          <p className="text-text-secondary max-w-2xl mx-auto text-xl leading-relaxed">
-            {t.subtitle}
-          </p>
+          {t.subtitle && (
+            <p className="text-text-secondary max-w-2xl mx-auto text-xl leading-relaxed">
+              {t.subtitle}
+            </p>
+          )}
         </motion.div>
         
         <div className="flex flex-wrap justify-center gap-8 mb-24">

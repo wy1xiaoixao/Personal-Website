@@ -5,16 +5,16 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Cormorant Garamond", serif;
   
-  /* Warm Organic Palette */
-  --color-bg-main: #FDFCF8; /* Warm cream */
+  /* Youthful Healing Palette (Spring Mint & Peach) */
+  --color-bg-main: #FDFCF8; /* Warm creamy white */
   --color-card-light: #FFFFFF;
-  --color-card-dark: #2A332C; /* Deep forest green */
-  --color-accent-olive: #5A6B5D; /* Muted olive green */
-  --color-accent-sage: #8A9A8E; /* Light sage green */
-  --color-accent-gold: #D4AF37; /* Subtle gold accent */
-  --color-accent-terracotta: #A65D43; /* Warm earth tone */
-  --color-text-primary: #1A1A1A;
-  --color-text-secondary: #4A5D4E;
+  --color-card-dark: #2D3436; /* Soft charcoal */
+  --color-accent-olive: #5F8D4E; /* Fresh forest green */
+  --color-accent-sage: #A4BE7B; /* Soft spring green */
+  --color-accent-gold: #F9C784; /* Sunny apricot */
+  --color-accent-terracotta: #E0AFA0; /* Soft dusty rose */
+  --color-text-primary: #2D3436;
+  --color-text-secondary: #636E72;
 }
 
 @keyframes gradient-flow {
